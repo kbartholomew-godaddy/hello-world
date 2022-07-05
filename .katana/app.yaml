@@ -1,0 +1,8 @@
+workflows:
+  test:
+    tasks:
+      - name: test
+      
+tasks:
+  test:
+    steps: echo 'starting the test!'; sleep 10; echo 'finishing the test!'
