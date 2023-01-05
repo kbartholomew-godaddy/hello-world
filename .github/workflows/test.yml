@@ -18,6 +18,7 @@ jobs:
       
       - name: Make a comment
         if: context.issue.number
+        uses: actions/github-script@v6
         with:
           script: |
             github.rest.issues.createComment({
