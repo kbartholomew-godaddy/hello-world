@@ -15,6 +15,18 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      - name: Make a comment
+        if: context.issue.number
+        with:
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "Hello, this message was sent by GitHub Actions!"
+            });
+          
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
