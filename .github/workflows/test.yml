@@ -28,6 +28,7 @@ jobs:
       
   deploy-prod:
     runs-on: ubuntu-latest
+    needs: ["deploy-test","deploy-dev"]
     environment: prod
     steps:
       - run: echo "deploying to prod"
