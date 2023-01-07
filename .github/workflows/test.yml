@@ -25,6 +25,9 @@ jobs:
     environment: test
     steps:
       - run: echo "deploying to test"
+      - run: |
+          echo "doing some tests"
+          sleep 5
       
   deploy-prod:
     runs-on: ubuntu-latest
